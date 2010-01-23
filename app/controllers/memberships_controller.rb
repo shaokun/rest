@@ -23,4 +23,15 @@ class MembershipsController < ApplicationController
     end
     
   end
+  
+  def destroy
+    @membership = Membership.find(params[:id])
+    @membership.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(memberships_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
 end
