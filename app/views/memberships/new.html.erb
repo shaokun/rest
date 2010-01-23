@@ -1,0 +1,6 @@
+<%form_for @membership do |f|%>
+	<%=select_tag :user_id, options_for_select(User.all.collect{|u| [u.name, u.id]})%>
+	<%=select_tag :group_id, options_for_select(Group.all.collect{|g| [g.name, g.id]})%>
+	
+	<%=submit_tag "Create"%>
+<%end%>

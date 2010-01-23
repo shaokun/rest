@@ -1,0 +1,20 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%=h @user.dob %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%=h @user.sex %>
+</p>
+
+<p><b>Groups I joined:</b> <%=@user.groups.collect{|g| g.name}.join(", ")%></p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
